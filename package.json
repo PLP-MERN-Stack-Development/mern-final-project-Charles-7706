@@ -1,0 +1,35 @@
+{
+  "name": "taskflow-mern-app",
+  "version": "1.0.0",
+  "description": "Full-stack task management application built with MERN stack",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "test": "concurrently \"npm run test:server\" \"npm run test:client\"",
+    "test:server": "cd backend && npm test",
+    "test:client": "cd frontend && npm test -- --watchAll=false",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
+  },
+  "keywords": [
+    "mern",
+    "react",
+    "nodejs",
+    "mongodb",
+    "express",
+    "task-management",
+    "real-time"
+  ],
+  "author": "Charles",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
